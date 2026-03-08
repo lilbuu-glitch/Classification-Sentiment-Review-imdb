@@ -121,4 +121,4 @@ curl -X 'POST' \
 ```
 
 ---
-*Dibuat oleh AI Engineer Candidate - 2024*
+
