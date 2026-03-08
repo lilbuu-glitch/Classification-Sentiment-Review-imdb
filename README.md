@@ -1,6 +1,6 @@
 # Classification Sentiment Review IMDB
 
-Proyek ini adalah implementasi end-to-end Machine Learning Pipeline untuk klasifikasi sentimen ulasan film menggunakan dataset IMDB. Dibangun sebagai bagian dari penilaian teknis AI Engineer.
+Proyek ini adalah implementasi end-to-end Ai & Machine Learning Pipeline untuk klasifikasi sentimen ulasan film menggunakan dataset IMDB. Dibangun sebagai bagian dari penilaian teknis AI Engineer.
 
 ---
 
