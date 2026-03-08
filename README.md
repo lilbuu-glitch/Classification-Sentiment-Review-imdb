@@ -45,7 +45,7 @@ Saya melatih beberapa model (Logistic Regression, Linear SVM, dan Random Forest)
 Berikut adalah bukti nyata performa model pada test set (20% data):
 
 #### Confusion Matrix
-![Confusion Matrix](Output Confusion Matrix.png)
+![Confusion Matrix]Image/Output Confusion Matrix.png
 *Model menunjukkan kemampuan seimbang dalam mengklasifikasikan kelas positif dan negatif.*
 
 #### ROC Curve
