@@ -13,8 +13,8 @@ from sklearn.metrics import (accuracy_score, precision_score, recall_score,
 import joblib
 import os
 
-from .feature_engineering import FeatureEngineer
-from .utils import setup_logging, ensure_dir, save_metrics, format_time
+from feature_engineering import FeatureEngineer
+from utils import setup_logging, ensure_dir, save_metrics, format_time
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)

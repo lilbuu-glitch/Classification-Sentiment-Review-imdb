@@ -9,7 +9,7 @@ from sklearn.preprocessing import LabelEncoder
 import joblib
 import os
 
-from .preprocessing import TextPreprocessor
+from preprocessing import TextPreprocessor
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)

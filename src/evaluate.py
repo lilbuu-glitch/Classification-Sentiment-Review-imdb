@@ -9,7 +9,7 @@ from sklearn.metrics import (accuracy_score, precision_score, recall_score,
                            confusion_matrix, roc_curve, auc)
 import os
 
-from .utils import setup_logging, ensure_dir, save_metrics, create_confusion_matrix_plot, create_roc_curve_plot
+from utils import setup_logging, ensure_dir, save_metrics, create_confusion_matrix_plot, create_roc_curve_plot
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -96,10 +96,10 @@ class ModelEvaluator:
         self.evaluation_results[model_name] = results
         
         logger.info(f"Evaluation completed for {model_name}")
-        logger.info(f"Test Accuracy: {metrics['accuracy']:.4f}")
-        logger.info(f"Test F1-score: {metrics['f1_score']:.4f}")
-        if metrics['roc_auc'] > 0:
-            logger.info(f"Test ROC-AUC: {metrics['roc_auc']:.4f}")
+        logger.info(f"Test Accuracy: {metrics.get('accuracy', 0.0):.4f}")
+        logger.info(f"Test F1-score: {metrics.get('f1_score', 0.0):.4f}")
+        if metrics.get('roc_auc', 0) > 0:
+            logger.info(f"Test ROC-AUC: {metrics.get('roc_auc', 0.0):.4f}")
         
         return results
     
@@ -118,6 +118,9 @@ class ModelEvaluator:
             'f1_weighted': f1_score(y_true, y_pred, average='weighted'),
         }
         
+        # Add a generic f1_score key (weighted is a good default for general reporting)
+        metrics['f1_score'] = metrics['f1_weighted']
+        
         # Add ROC-AUC if probabilities are available
         if y_proba is not None:
             try:
@@ -132,6 +135,8 @@ class ModelEvaluator:
             metrics['precision_binary'] = precision_score(y_true, y_pred, pos_label=1)
             metrics['recall_binary'] = recall_score(y_true, y_pred, pos_label=1)
             metrics['f1_binary'] = f1_score(y_true, y_pred, pos_label=1)
+            # For binary, f1_score usually refers to the positive class F1
+            metrics['f1_score'] = metrics['f1_binary']
         
         return metrics
     
