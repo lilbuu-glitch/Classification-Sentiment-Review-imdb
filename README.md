@@ -46,10 +46,12 @@ Berikut adalah bukti nyata performa model pada test set (20% data):
 
 #### Confusion Matrix
 ![Confusion Matrix](Image/Output%20Confusion%20Matrix.png)
+
 *Model menunjukkan kemampuan seimbang dalam mengklasifikasikan kelas positif dan negatif.*
 
 #### ROC Curve
 ![ROC Curve](Image/Output%20ROC.png)
+
 *Skor AUC sebesar 0.96 menunjukkan pemisahan kelas yang sangat baik.*
 
 ---
